@@ -7,11 +7,15 @@ import productRoute from './Routes/ProductRoutes.js';
 import { errorHandler, notFound } from './Middleware/Error.js';
 import userRoute from './Routes/UserRoutes.js';
 
+
 dotenv.config();
 connectDatabase();
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+  }));
 //API
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);

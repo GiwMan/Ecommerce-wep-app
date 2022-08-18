@@ -18,6 +18,11 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         require:true,
         default:false
+    },
+    role: { 
+        type: String, 
+        emum: ["user","admin"] , 
+        required: true 
     }
 },
 {
