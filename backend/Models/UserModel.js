@@ -14,15 +14,27 @@ const userSchema = mongoose.Schema({
         type: String,
         require:true
     },
+    phone: {
+        type: Number,
+        require:true
+    },
+    afm: {
+        type: Number,
+        require:true
+    },
+    address: {
+        type: String,
+        require:false
+    },
     isAdmin: {
         type: Boolean,
         require:true,
         default:false
     },
-    role: { 
-        type: String, 
-        emum: ["user","admin"] , 
-        required: true 
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user'
     }
 },
 {
